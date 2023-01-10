@@ -1,0 +1,53 @@
+﻿@model MVCloginEstudioTest.Models.AtencionViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Datos de la atencion</h1>
+
+<h4>Atencion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="IdPaciente" />
+
+            <div class="form-group">
+                <label asp-for="Atencion.Alergias" class="control-label"></label>
+                <input asp-for="Atencion.Alergias" class="form-control" />
+                <span asp-validation-for="Atencion.Alergias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atencion.SignoVital" class="control-label"></label>
+                <input asp-for="Atencion.SignoVital" class="form-control" />
+                <span asp-validation-for="Atencion.SignoVital" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atencion.EnfermedadCronica" class="control-label"></label>
+                <input asp-for="Atencion.EnfermedadCronica" class="form-control" />
+                <span asp-validation-for="Atencion.EnfermedadCronica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atencion.Diagnostico" class="control-label"></label>
+                <input asp-for="Atencion.Diagnostico" class="form-control" />
+                <span asp-validation-for="Atencion.Diagnostico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atencion.Tratamiento" class="control-label"></label>
+                <input asp-for="Atencion.Tratamiento" class="form-control" />
+                <span asp-validation-for="Atencion.Tratamiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver atras</a>
+</div>
+

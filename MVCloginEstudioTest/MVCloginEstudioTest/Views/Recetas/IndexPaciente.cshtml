@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MVCProyectoClase.Models.Recetas>
+
+@{
+    ViewData["Title"] = "IndexPaciente";
+}
+
+<h1>Lista de recetas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RecetaMedicaNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RutPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EdadPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DomicilioPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaReceta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComentarioReceta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDoctor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecetaMedicaNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RutPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EdadPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DomicilioPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaReceta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComentarioReceta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreDoctor)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = item.IdReceta }) 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

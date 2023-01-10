@@ -1,0 +1,63 @@
+﻿@model MVCloginEstudioTest.Models.Pacientes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Registro de pacientes consulta</h1>
+
+<h4>Datos paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Rut" class="control-label"></label>
+                <input asp-for="Rut" class="form-control" />
+                <span asp-validation-for="Rut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePaciente" class="control-label"></label>
+                <input asp-for="NombrePaciente" class="form-control" />
+                <span asp-validation-for="NombrePaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoPaciente" class="control-label"></label>
+                <input asp-for="ApellidoPaciente" class="form-control" />
+                <span asp-validation-for="ApellidoPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotConsulta" class="control-label"></label>
+                <input asp-for="MotConsulta" class="form-control" />
+                <span asp-validation-for="MotConsulta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consulta" class="control-label"></label>
+                <input asp-for="Consulta" class="form-control" />
+                <span asp-validation-for="Consulta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ingresar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Ir a la lista pacientes</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

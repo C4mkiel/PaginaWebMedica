@@ -1,0 +1,101 @@
+﻿@model MVCProyectoClase.Models.Recetas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar receta</h1>
+
+<h4>Receta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.ActionLink("Añadir medicamento","Create","Medicamento", new { id = Model.IdReceta}, null)
+        </div>
+
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RecetaMedicaNombre" class="control-label"></label>
+                <input asp-for="RecetaMedicaNombre" class="form-control" />
+                <span asp-validation-for="RecetaMedicaNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RutPaciente" class="control-label"></label>
+                <input asp-for="RutPaciente" class="form-control" />
+                <span asp-validation-for="RutPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePaciente" class="control-label"></label>
+                <input asp-for="NombrePaciente" class="form-control" />
+                <span asp-validation-for="NombrePaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdadPaciente" class="control-label"></label>
+                <input asp-for="EdadPaciente" class="form-control" />
+                <span asp-validation-for="EdadPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomicilioPaciente" class="control-label"></label>
+                <input asp-for="DomicilioPaciente" class="form-control" />
+                <span asp-validation-for="DomicilioPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaReceta" class="control-label"></label>
+                <input asp-for="FechaReceta" class="form-control" />
+                <span asp-validation-for="FechaReceta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComentarioReceta" class="control-label"></label>
+                <input asp-for="ComentarioReceta" class="form-control" />
+                <span asp-validation-for="ComentarioReceta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreDoctor" class="control-label"></label>
+                <input asp-for="NombreDoctor" class="form-control" />
+                <span asp-validation-for="NombreDoctor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guarda" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.Medicamento != null)
+{ 
+    <h2>Medicamentos</h2>
+
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Comprimido</th>
+            <th>Hora Consumo</th>
+            <th>Tiempo Consumo</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Medicamento)
+                {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.Comprimido)</td>
+                <td>@Html.DisplayFor(modelItem => item.HoraConsumo)</td>
+                <td>@Html.DisplayFor(modelItem => item.TiempoConsumo)</td>
+            </tr>
+                }
+        </tbody>
+    </table>
+
+}
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

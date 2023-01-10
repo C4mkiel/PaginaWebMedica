@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MVCloginEstudioTest.Models.Usuario>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <h1>Bienvenido @Html.DisplayFor(modelItem => item.NombrePaciente)</h1>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorreoUsuario)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar datos", "Edit", new { id = item.IdPaciente }) |
+                    @Html.ActionLink("Detalles cuenta","DetailsPaciente","Recetas", new { RutPaciente = item.Rut })
+                </td>
+            </tr>
+        }
+    </tbody>
+    <form class="Rut" asp-controller="Recetas" asp-action="IndexPaciente">
+        <div class="form-group mb-3">
+            <label class="form-label">Rut:</label>
+            <input type="text" class="form-control" name="RutPaciente" id="RutPaciente" placeholder="Buscar todas mis recetas a traves del rut">
+        </div>
+        <div class="form-group d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+    </form>
+</table>

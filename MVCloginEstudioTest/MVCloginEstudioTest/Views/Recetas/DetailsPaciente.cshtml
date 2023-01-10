@@ -1,0 +1,66 @@
+﻿@model MVCProyectoClase.Models.Recetas
+
+@{
+    ViewData["Title"] = "DetailsPaciente";
+}
+
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Receta</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecetaMedicaNombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecetaMedicaNombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RutPaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RutPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombrePaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombrePaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EdadPaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EdadPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DomicilioPaciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DomicilioPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaReceta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaReceta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComentarioReceta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComentarioReceta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreDoctor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreDoctor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="IndexPaciente">Volver</a>
+</div>
